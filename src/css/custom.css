@@ -15,7 +15,16 @@
   --ifm-color-primary-light: #1b5abf;
   --ifm-color-primary-lighter: #1d5ec8;
   --ifm-color-primary-lightest: #236bdf;
-  --ifm-background-color: hsl(0, 0%, 99%);
+  --ifm-background-color: hsl(0, 0%, 98%);
+  /* --- 结束 --- */
+  
+  /* --- NavBar 颜色自定义 --- */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-text-color: #333333;
+  --ifm-navbar-link-color: #333333;
+  --ifm-navbar-link-hover-color: #1963ae;
+  --ifm-navbar-item-padding-horizontal: 12px;
+  --ifm-navbar-item-padding-vertical: 8px;
   /* --- 结束 --- */
   
   /* 你原有的设置 (保留) */
@@ -25,14 +34,21 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #66e6ff;
-  --ifm-color-primary-dark: #42e0ff;
-  --ifm-color-primary-darker: #30ddff;
-  --ifm-color-primary-darkest: #00d1fa;
-  --ifm-color-primary-light: #8aecff;
-  --ifm-color-primary-lighter: #9cefff;
-  --ifm-color-primary-lightest: #d1f8ff;
+  --ifm-color-primary: #b3f2ff;
+  --ifm-color-primary-dark: #88ebff;
+  --ifm-color-primary-darker: #72e7ff;
+  --ifm-color-primary-darkest: #31dcff;
+  --ifm-color-primary-light: #def9ff;
+  --ifm-color-primary-lighter: #f4fdff;
+  --ifm-color-primary-lightest: #ffffff;
   --ifm-background-color: hsl(222, 25%, 12%);
+  /* --- 结束 --- */
+  
+  /* --- 深色模式 NavBar 颜色自定义 --- */
+  --ifm-navbar-background-color: #1b1b1d;
+  --ifm-navbar-text-color: #ffffff;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #b3f2ff;
   /* --- 结束 --- */
   
   /* 你原有的设置 (保留) */

@@ -83,7 +83,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: 'My Site',
+      title: "CandyXR's StoryBoard",
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
