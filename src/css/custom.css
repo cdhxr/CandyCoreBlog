@@ -8,14 +8,14 @@
 
 :root {
   /* --- 亮色模式主题色 (来自 --nebula-500) --- */
-  --ifm-color-primary: #1952ae;
+  --ifm-color-primary: #1963ae;
   --ifm-color-primary-dark: #174a9d;
   --ifm-color-primary-darker: #154694;
   --ifm-color-primary-darkest: #12397a;
   --ifm-color-primary-light: #1b5abf;
   --ifm-color-primary-lighter: #1d5ec8;
   --ifm-color-primary-lightest: #236bdf;
-  --ifm-background-color: hsl(0, 0%, 98%);
+  --ifm-background-color: hsl(0, 0%, 99%);
   /* --- 结束 --- */
   
   /* 你原有的设置 (保留) */
