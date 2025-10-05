@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'My StoryBoard',
   tagline: '这是标语',
-  favicon: 'img/myAvatar.jpg',
+  favicon: 'img/MyAvatar.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -116,7 +116,7 @@ const config: Config = {
       title: "Chxr's StoryBoard",
       logo: {
         alt: 'My Site Logo',
-        src: 'img/myAvatar.jpg',
+        src: 'img/MyAvatar.png',
       },
       items: [
         {
