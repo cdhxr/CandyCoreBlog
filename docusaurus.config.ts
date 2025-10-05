@@ -7,7 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'My StoryBoard',
   tagline: '这是标语',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/myAvatar.jpg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -47,7 +47,11 @@ const config: Config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
-          blogSidebarTitle: 'Posts',
+          path: './thoughts',
+          routeBasePath: 'thoughts',
+          blogTitle: '洞察',
+          blogDescription: '分享我对各个领域知识的思考、观点和见解',
+          blogSidebarTitle: '洞察',
           blogSidebarCount: 'ALL',
           showReadingTime: true,
           feedOptions: {
@@ -70,6 +74,32 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        /**
+         * Required for any multi-instance plugin
+         */
+        id: 'life-blog',
+        /**
+         * URL route for the blog section of your site.
+         * *DO NOT* include a trailing slash.
+         */
+        routeBasePath: 'life',
+        /**
+         * Path to data on filesystem relative to site dir.
+         */
+        path: './life-blog',
+        blogTitle: '随想',
+        blogDescription: '记录日常生活的点点滴滴，分享生活中的感悟和体验',
+        blogSidebarTitle: '随想',
+        blogSidebarCount: 'ALL',
+        showReadingTime: true,
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -83,19 +113,20 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "CandyXR's StoryBoard",
+      title: "Chxr's StoryBoard",
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/myAvatar.jpg',
       },
       items: [
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: '笔记',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/thoughts', label: '洞察', position: 'left'},
+        {to: '/life', label: '随想', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -114,7 +145,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: '笔记',
               to: '/docs/intro',
             },
           ],
