@@ -167,10 +167,10 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              html:`<p>althorchxr@gmail.com</p>`
+              html:`<span>althorchxr@gmail.com</span>`
             },
             {
-              html:`<p>2816650923@qq.com</p>`
+              html:`<span>2816650923@qq.com</span>`
             }
           ],
         },
