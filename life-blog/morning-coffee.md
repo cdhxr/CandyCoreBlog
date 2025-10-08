@@ -1,7 +1,6 @@
 ---
 slug: coffee-and-morning-thoughts
 title: 晨起一杯咖啡的思考
-authors: [chxr]
 tags: [生活, 咖啡, 早晨, 日常]
 ---
 

@@ -46,27 +46,7 @@ const config: Config = {
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          path: './thoughts',
-          routeBasePath: 'thoughts',
-          blogTitle: '洞察',
-          blogDescription: '分享我对各个领域知识的思考、观点和见解',
-          blogSidebarTitle: '洞察',
-          blogSidebarCount: 'ALL',
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false, // 禁用默认博客
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -75,6 +55,16 @@ const config: Config = {
   ],
 
   plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'thoughts',
+        path: 'thoughts',
+        routeBasePath: 'thoughts',
+        sidebarPath: './sidebars.ts',
+        editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+      },
+    ],
     [
       '@docusaurus/plugin-content-blog',
       {
@@ -125,12 +115,18 @@ const config: Config = {
           position: 'left',
           label: '笔记',
         },
-        {to: '/thoughts', label: '洞察', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'thoughtsSidebar',
+          docsPluginId: 'thoughts',
+          position: 'left',
+          label: '洞察',
+        },
         {to: '/life', label: '随想', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          href: 'https://github.com/cdhxr',
           position: 'right',
+          className: 'header-github-link',
         },
         // {
         //   type: 'localeDropdown',
@@ -148,22 +144,22 @@ const config: Config = {
               label: '笔记',
               to: '/docs/intro',
             },
+            {
+              label: '洞察',
+              to: '/thoughts/intro',
+            }
           ],
         },
         {
-          title: 'Community',
+          title: 'Contact Me',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/cdhxr',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'biliblii',
+              href: 'https://space.bilibili.com/244330808?spm_id_from=333.1007.0.0',
             },
           ],
         },
@@ -171,17 +167,15 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
+              html:`<p>althorchxr@gmail.com</p>`
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
+              html:`<p>2816650923@qq.com</p>`
+            }
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `© ${new Date().getFullYear()} Created by Chxr`,
     },
     prism: {
       theme: prismThemes.github,
