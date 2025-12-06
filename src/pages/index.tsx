@@ -2,52 +2,65 @@ import type { ReactNode } from 'react';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import { Button } from '@site/src/components/ui/button';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@site/src/components/ui/card';
-import { BookOpen, Lightbulb, Pencil, ArrowRight, Github } from 'lucide-react';
+import { BookOpen, Lightbulb, Pencil, ArrowRight } from 'lucide-react';
 
 function HeroSection() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <section className="relative overflow-hidden px-4 py-16 sm:py-24">
-      {/* 背景装饰 - 使用静态渐变代替模糊效果 */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 h-[500px] w-[800px] rounded-full from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/5 dark:via-purple-500/5 dark:to-pink-500/5" />
-      </div>
-      
-      <div className="mx-auto max-w-4xl text-center">
-        {/* 标签 */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-background/80 px-4 py-2 text-sm font-medium">
-          <span className="relative flex h-2 w-2">
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-          </span>
-          欢迎来到我的数字花园 🌱
-        </div>
+    <section className="relative overflow-hidden px-6 py-16 md:py-24 lg:px-12">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Left Content */}
+          <div className="flex flex-col items-start text-left">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl mb-6 leading-tight">
+              {siteConfig.title}
+              <br />
+              <span className="text-muted-foreground text-3xl sm:text-4xl font-normal">
+                Digital Garden
+              </span>
+            </h1>
+            <p className="text-lg text-muted-foreground sm:text-xl mb-10 max-w-lg leading-relaxed">
+              记录技术成长、分享生活感悟、探索思维边界。
+              <br />
+              这里是我的数字花园，欢迎光临。
+            </p>
+            <div className="flex flex-wrap gap-6">
+              <Link to="/docs/intro" className="group inline-flex items-center text-base font-medium">
+                <span className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:scale-110">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+                开始阅读
+              </Link>
+              <Link to="/thoughts/intro" className="group inline-flex items-center text-base font-medium">
+                <span className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-muted text-muted-foreground transition-transform group-hover:scale-110">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+                随想杂记
+              </Link>
+            </div>
+          </div>
 
-        {/* 主标题 */}
-        <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          {siteConfig.title}
-        </h1>
-
-        {/* 副标题 */}
-        <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground sm:text-xl">
-          记录技术成长、分享生活感悟、探索思维边界
-        </p>
-
-        {/* 按钮组 */}
-        <div className="flex flex-wrap items-center justify-center gap-4">
-          <Button asChild size="lg" className="gap-2">
-            <Link to="/docs/intro">
-              开始阅读
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button asChild variant="outline" size="lg" className="gap-2">
-            <Link to="https://github.com/cdhxr/CandyCoreBlog">
-              <Github className="h-4 w-4" />
-              GitHub
-            </Link>
-          </Button>
+          {/* Right Image Grid - Collage Style */}
+          <div className="relative">
+             <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4 translate-y-8">
+                   <div className="aspect-3/4 w-full overflow-hidden rounded-2xl bg-muted">
+                      <img src="/img/undraw_docusaurus_mountain.svg" alt="Collage 1" className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
+                   </div>
+                   <div className="aspect-4/3 w-full overflow-hidden rounded-2xl bg-muted">
+                      <img src="/img/undraw_docusaurus_react.svg" alt="Collage 2" className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
+                   </div>
+                </div>
+                <div className="space-y-4">
+                   <div className="aspect-4/3 w-full overflow-hidden rounded-2xl bg-muted">
+                      <img src="/img/undraw_docusaurus_tree.svg" alt="Collage 3" className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
+                   </div>
+                   <div className="aspect-3/4 w-full overflow-hidden rounded-2xl bg-muted">
+                      <img src="/img/docusaurus-social-card.jpg" alt="Collage 4" className="h-full w-full object-cover hover:scale-105 transition-transform duration-500" />
+                   </div>
+                </div>
+             </div>
+          </div>
         </div>
       </div>
     </section>
@@ -80,39 +93,42 @@ const features = [
 
 function FeaturesSection() {
   return (
-    <section className="px-4 py-16 sm:py-20">
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-foreground sm:text-4xl">
-            探索内容
-          </h2>
-          <p className="text-muted-foreground">
-            这里有技术、有思考、有生活
-          </p>
-        </div>
+    <section className="px-6 py-20 lg:px-12 border-t border-border/50">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:grid-cols-4">
+          {/* Section Title */}
+          <div className="lg:col-span-1 pr-8">
+            <h2 className="text-3xl font-bold text-foreground mb-4 font-serif">
+              What's New
+            </h2>
+            <p className="text-muted-foreground mb-8">
+              探索最新的技术文档、生活记录和思考感悟。
+            </p>
+            <Link to="/blog" className="inline-flex items-center text-sm font-medium hover:underline underline-offset-4">
+               查看归档 <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <Card key={feature.title} className="group relative overflow-hidden transition-shadow duration-200 hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-                  <feature.icon className="h-6 w-6" />
-                </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-                <CardDescription className="text-base">
-                  {feature.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button asChild variant="ghost" className="gap-2 p-0 hover:bg-transparent hover:text-primary">
-                  <Link to={feature.link}>
-                    {feature.linkText}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
+          {/* Content Grid */}
+          <div className="lg:col-span-3">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {features.map((feature) => (
+                <Link key={feature.title} to={feature.link} className="group block">
+                  <div className="aspect-4/3 w-full overflow-hidden rounded-xl bg-muted mb-4">
+                    <div className="h-full w-full flex items-center justify-center bg-muted/50 group-hover:bg-muted transition-colors">
+                       <feature.icon className="h-12 w-12 text-muted-foreground/50 group-hover:text-primary transition-colors" />
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">
+                    {feature.description}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
