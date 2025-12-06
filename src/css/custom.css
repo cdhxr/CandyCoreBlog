@@ -4,55 +4,144 @@
  * work well for content-centric websites.
  */
 
-/* src/css/custom.css */
+/* Tailwind CSS v4 配置 */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme) important;
+@import 'tailwindcss/utilities.css' layer(utilities) important;
 
-:root {
-  /* --- 亮色模式主题色 (来自 --nebula-500) --- */
-  --ifm-color-primary: #1963ae;
-  --ifm-color-primary-dark: #174a9d;
-  --ifm-color-primary-darker: #154694;
-  --ifm-color-primary-darkest: #12397a;
-  --ifm-color-primary-light: #1b5abf;
-  --ifm-color-primary-lighter: #1d5ec8;
-  --ifm-color-primary-lightest: #236bdf;
-  --ifm-background-color: hsl(0, 0%, 98%);
-  /* --- 结束 --- */
-  
-  /* --- NavBar 颜色自定义 --- */
-  --ifm-navbar-background-color: #ffffff;
-  --ifm-navbar-text-color: #333333;
-  --ifm-navbar-link-color: #333333;
-  --ifm-navbar-link-hover-color: #1963ae;
-  --ifm-navbar-item-padding-horizontal: 12px;
-  --ifm-navbar-item-padding-vertical: 8px;
-  /* --- 结束 --- */
-  
-  /* 你原有的设置 (保留) */
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+@plugin 'tailwindcss-animate';
+
+@custom-variant dark (&:is([data-theme="dark"] *));
+
+/* shadcn 主题映射 */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #b3f2ff;
-  --ifm-color-primary-dark: #88ebff;
-  --ifm-color-primary-darker: #72e7ff;
-  --ifm-color-primary-darkest: #31dcff;
-  --ifm-color-primary-light: #def9ff;
-  --ifm-color-primary-lighter: #f4fdff;
-  --ifm-color-primary-lightest: #ffffff;
-  --ifm-background-color: hsl(222, 25%, 12%);
-  /* --- 结束 --- */
-  
-  /* --- 深色模式 NavBar 颜色自定义 --- */
-  --ifm-navbar-background-color: #1b1b1d;
-  --ifm-navbar-text-color: #ffffff;
-  --ifm-navbar-link-color: #ffffff;
-  --ifm-navbar-link-hover-color: #b3f2ff;
-  /* --- 结束 --- */
-  
-  /* 你原有的设置 (保留) */
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--border, currentColor);
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+
+  :root {
+    /* --- shadcn 主题变量 --- */
+    --radius: 0.65rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.145 0 0);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --muted: oklch(0.97 0 0);
+    --muted-foreground: oklch(0.556 0 0);
+    --accent: oklch(0.97 0 0);
+    --accent-foreground: oklch(0.205 0 0);
+    --destructive: oklch(0.577 0.245 27.325);
+    --border: oklch(0.922 0 0);
+    --input: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+    
+    /* --- 亮色模式主题色 (来自 --nebula-500) --- */
+    --ifm-color-primary: #1963ae;
+    --ifm-color-primary-dark: #174a9d;
+    --ifm-color-primary-darker: #154694;
+    --ifm-color-primary-darkest: #12397a;
+    --ifm-color-primary-light: #1b5abf;
+    --ifm-color-primary-lighter: #1d5ec8;
+    --ifm-color-primary-lightest: #236bdf;
+    --ifm-background-color: hsl(0, 0%, 98%);
+    
+    /* --- NavBar 颜色自定义 --- */
+    --ifm-navbar-background-color: #ffffff;
+    --ifm-navbar-text-color: #333333;
+    --ifm-navbar-link-color: #333333;
+    --ifm-navbar-link-hover-color: #1963ae;
+    --ifm-navbar-item-padding-horizontal: 12px;
+    --ifm-navbar-item-padding-vertical: 8px;
+    
+    /* 你原有的设置 (保留) */
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  }
+
+  html[data-theme='dark'] {
+    /* --- shadcn 深色主题变量 --- */
+    --background: oklch(20.8% 0.042 265.755);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(20.8% 0.042 265.755);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(20.8% 0.042 265.755);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.606 0.25 292.717);
+    --primary-foreground: oklch(0.969 0.016 293.756);
+    --secondary: oklch(27.9% 0.041 260.031);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(27.9% 0.041 260.031);
+    --muted-foreground: oklch(0.705 0.015 286.067);
+    --accent: oklch(27.9% 0.041 260.031);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.38 0.189 293.745);
+    
+    /* --- Docusaurus 深色主题 --- */
+    --ifm-color-primary: #b3f2ff;
+    --ifm-color-primary-dark: #88ebff;
+    --ifm-color-primary-darker: #72e7ff;
+    --ifm-color-primary-darkest: #31dcff;
+    --ifm-color-primary-light: #def9ff;
+    --ifm-color-primary-lighter: #f4fdff;
+    --ifm-color-primary-lightest: #ffffff;
+    --ifm-background-color: hsl(222, 25%, 12%);
+    
+    /* --- 深色模式 NavBar 颜色自定义 --- */
+    --ifm-navbar-background-color: #1b1b1d;
+    --ifm-navbar-text-color: #ffffff;
+    --ifm-navbar-link-color: #ffffff;
+    --ifm-navbar-link-hover-color: #b3f2ff;
+    
+    /* 你原有的设置 (保留) */
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  }
+
+  html {
+    font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+  }
 }
 
 /* GitHub */
