@@ -98,7 +98,7 @@ export function TypographicCard({
 
       {/* 底部倾斜灰色卡片 — 放在文字下层 */}
       <div
-        className="absolute bottom-40 left-100 right-0 w-full h-full bg-[#f1f1f1] z-5"
+        className="absolute bottom-20 left-20 right-0 w-full h-full bg-[#f1f1f1] z-5"
         style={{
           transform: 'rotate(40deg)',
           opacity: 0.6,
@@ -109,12 +109,12 @@ export function TypographicCard({
 <div
   className="absolute inset-0 pointer-events-none z-40"
   style={{
-    backdropFilter: 'blur(1.5px)',
-    WebkitBackdropFilter: 'blur(1.5px)',
+    backdropFilter: 'blur(1px)',
+    WebkitBackdropFilter: 'blur(1px)',
     WebkitMaskImage:
-  'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.15) 60%, black 75%)',
+  'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.15) 30%, black 75%)',
 maskImage:
-  'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.15) 60%, black 75%)'  }}
+  'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.15) 30%, black 75%)'  }}
 />
 
       {/* 装饰：模拟光影/暗角 */}
