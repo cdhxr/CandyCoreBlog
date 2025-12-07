@@ -269,3 +269,67 @@ article {
   writing-mode: vertical-rl;
   text-orientation: upright;
 }
+
+/* ========== DocSidebar 样式 (仅 Tailwind 无法处理的部分) ========== */
+
+/* Collapse Button - CSS 变量和 hover 状态 */
+:root {
+  --docusaurus-collapse-button-bg: transparent;
+  --docusaurus-collapse-button-bg-hover: rgb(0 0 0 / 10%);
+}
+
+[data-theme='dark']:root {
+  --docusaurus-collapse-button-bg: rgb(255 255 255 / 5%);
+  --docusaurus-collapse-button-bg-hover: rgb(255 255 255 / 10%);
+}
+
+.collapse-sidebar-button {
+  background-color: var(--docusaurus-collapse-button-bg);
+  border-color: var(--ifm-toc-border-color);
+}
+
+.collapse-sidebar-button:hover,
+.collapse-sidebar-button:focus {
+  background-color: var(--docusaurus-collapse-button-bg-hover);
+}
+
+/* RTL 支持 */
+[dir='rtl'] .collapse-sidebar-button-icon {
+  transform: rotate(0) !important;
+}
+
+/* Sidebar Menu - @supports scrollbar-gutter */
+@supports (scrollbar-gutter: stable) {
+  @media (min-width: 997px) {
+    .sidebar-menu {
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      scrollbar-gutter: stable;
+    }
+  }
+}
+
+/* 公告栏 margin */
+.sidebar-menu-with-announcement-bar {
+  margin-bottom: var(--docusaurus-announcement-bar-height);
+}
+
+/* DocSidebar - Docusaurus CSS 变量 */
+@media (min-width: 997px) {
+  .doc-sidebar {
+    padding-top: var(--ifm-navbar-height);
+    width: var(--doc-sidebar-width);
+  }
+
+  .doc-sidebar-logo {
+    margin: 0 var(--ifm-navbar-padding-horizontal);
+    min-height: var(--ifm-navbar-height);
+    max-height: var(--ifm-navbar-height);
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .doc-sidebar-logo img {
+    margin-right: 0.5rem;
+    height: 2rem;
+  }
+}
