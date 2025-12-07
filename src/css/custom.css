@@ -93,7 +93,7 @@
 
     /* --- shadcn 主题变量 --- */
     --radius: 0.65rem;
-    --background: oklch(1 0 0);
+    --background: oklch(100% 0.00011 271.152 / 0.948);
     --foreground: oklch(0.145 0 0);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.145 0 0);
@@ -199,10 +199,26 @@ html[data-theme='dark'] .header-github-link::before {
 }
 
 /* ========== 文章内容使用霞鹜文楷 ========== */
-.markdown,
+/* 文档与博客主栏内容区域 */
+.theme-doc-markdown>*,
+.theme-blog-post>* {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Category 分类页面宽度限制（排除 breadcrumbs） */
+[class*="generatedIndexPage_"]>header,
+[class*="generatedIndexPage_"]>article,
+[class*="generatedIndexPage_"]>footer {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .markdown {
   max-width: 800px;
-  /* 你想要的宽度，比如 900 或 1000 */
+  /* 你期望的宽度 */
   margin: 0 auto;
 }
 

@@ -81,7 +81,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "Chxr's StoryBoard",
+      title: "CdCore's StoryBoard",
       logo: {
         alt: 'My Site Logo',
         src: 'img/MyAvatar.png',
@@ -153,7 +153,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} Created by Chxr`,
+      copyright: `© ${new Date().getFullYear()} Created by CdCore`,
     },
     prism: {
       theme: prismThemes.github,
