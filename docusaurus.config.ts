@@ -1,5 +1,5 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -42,13 +42,13 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: 'docs/notes',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: false, // 禁用默认博客
+        blog: {
+          path: 'docs/blogs',
+          routeBasePath: 'life',
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -61,33 +61,9 @@ const config: Config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'thoughts',
-        path: 'thoughts',
+        path: 'docs/thoughts',
         routeBasePath: 'thoughts',
         sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-blog',
-      {
-        /**
-         * Required for any multi-instance plugin
-         */
-        id: 'life-blog',
-        /**
-         * URL route for the blog section of your site.
-         * *DO NOT* include a trailing slash.
-         */
-        routeBasePath: 'life',
-        /**
-         * Path to data on filesystem relative to site dir.
-         */
-        path: './life-blog',
-        blogTitle: '随想',
-        blogDescription: '记录日常生活的点点滴滴，分享生活中的感悟和体验',
-        blogSidebarTitle: '随想',
-        blogSidebarCount: 'ALL',
-        showReadingTime: true,
       },
     ],
   ],
@@ -124,7 +100,7 @@ const config: Config = {
           position: 'left',
           label: '洞察',
         },
-        {to: '/life', label: '随想', position: 'left'},
+        { to: '/life', label: '随想', position: 'left' },
         {
           href: 'https://github.com/cdhxr',
           position: 'right',
@@ -169,10 +145,10 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              html:`<span>althorchxr@gmail.com</span>`
+              html: `<span>althorchxr@gmail.com</span>`
             },
             {
-              html:`<span>2816650923@qq.com</span>`
+              html: `<span>2816650923@qq.com</span>`
             }
           ],
         },
@@ -183,7 +159,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-    
+
   } satisfies Preset.ThemeConfig,
 };
 
