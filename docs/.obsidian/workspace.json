@@ -8,41 +8,45 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1690a74cce93617a",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "新标签页"
-            }
-          },
-          {
-            "id": "f7247b2366fc11d9",
+            "id": "ead205f350c0b320",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "React Questions.md",
+                "file": "notes/HTML渲染策略.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "React Questions"
+              "title": "HTML渲染策略"
             }
           },
           {
-            "id": "801c573d31b0d4bb",
+            "id": "8e919ce8c18f2ff6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "intro.md",
+                "file": "notes/前端工程化全史 1995-2025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "intro"
+              "title": "前端工程化全史 1995-2025"
+            }
+          },
+          {
+            "id": "79d2d2d591357674",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blogs/健康话题的思考.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "健康话题的思考"
             }
           }
         ],
@@ -223,27 +227,42 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "801c573d31b0d4bb",
+  "active": "79d2d2d591357674",
   "lastOpenFiles": [
-    "thoughts/intro.md",
-    "_templates/docusaurus.md",
-    "intro.md",
-    "notes/react设计策略与哲学.md",
+    "notes/前端工程化全史 1995-2025.md",
+    "blogs/健康话题的思考.md",
     "blogs/LastHoliday.md",
-    "thoughts/计算机相关/前端相关/images/ui-library-types.png",
-    "thoughts/计算机相关/前端相关/渲染策略——HTML到达浏览器的所有方法.md",
-    "thoughts/计算机相关/前端相关/Style System.md",
-    "thoughts/计算机相关/前端相关/images",
+    "thoughts/RSC & Nextjs.md",
+    "thoughts/intro.md",
+    "thoughts/assets/RSC & Nextjs",
+    "thoughts/assets",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755689.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755689 1.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755691.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755691 1.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755692.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755692 1.png",
+    "assets/RSC & Nextjs",
+    "notes/HTML渲染策略.md",
+    "notes/style system.md",
+    "notes/react设计策略与哲学.md",
+    "notes/assets/HTML渲染策略/file-20251208160457434.png",
+    "notes/assets/HTML渲染策略/file-20251208160334785.png",
+    "notes/assets/HTML渲染策略/file-20251208160253505.png",
+    "notes/assets/HTML渲染策略/file-20251208155916536.png",
+    "notes/assets/HTML渲染策略",
+    "notes/assets/style system",
+    "notes/react Rendering strategy.md",
+    "notes/assets/react Rendering strategy",
+    "notes/assets",
+    "intro.md",
     "thoughts/计算机相关/前端相关/React Client Framework.md",
-    "thoughts/计算机相关/前端相关/_category_.json",
-    "thoughts/计算机相关/前端相关",
-    "thoughts/计算机相关/_category_.json",
-    "thoughts/计算机相关",
-    "thoughts/杂记/_category_.json",
-    "thoughts/杂记",
-    "blogs",
-    "notes",
-    "thoughts",
+    "thoughts/计算机相关/前端相关/Style System.md",
+    "thoughts/计算机相关/前端相关/assets/Style System",
+    "thoughts/计算机相关/前端相关/assets",
+    "thoughts/计算机相关/前端相关/渲染策略——HTML到达浏览器的所有方法.md",
+    "_templates/docusaurus.md",
+    "thoughts/计算机相关/前端相关/images",
     "未命名 1.md",
     "gemini-scribe/Prompts/example-expert.md",
     "React/React State Management.md",
@@ -256,13 +275,6 @@
     "gemini-scribe/AGENTS.md",
     "对象的深度遍历.md",
     "手写题/发布订阅模式.md",
-    "手写题/防抖节流.md",
-    "JS/垃圾回收.md",
-    "JS/apply，bind，new，prototype chain，object，Scope....md",
-    "JS/promise copy.md",
-    "JS/curriing.md",
-    "assets/js GC/file-20251124210720912.png",
-    "assets/欢迎/file-20251116232041367.png",
     "未命名.canvas"
   ]
 }
