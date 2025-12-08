@@ -139,11 +139,11 @@ const config: Config = {
           items: [
             {
               label: '笔记',
-              to: '/docs/intro',
+              to: '/docs/HTML渲染策略',
             },
             {
               label: '洞察',
-              to: '/thoughts/intro',
+              to: '/thoughts/RSC%20&%20Nextjs',
             },
           ],
         },
