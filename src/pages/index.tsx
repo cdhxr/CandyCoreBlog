@@ -7,9 +7,9 @@ import Layout from '@theme/Layout';
 import { ArrowRight } from 'lucide-react';
 // import { TypographicCard } from '../components/TypographicCard';
 import { HandWrittenTitle } from '../components/ui/hand-writing-text';
-import lastHoliday from '../components/ui/content/lastHoliday';
-import docsIntro from '../components/ui/content/docsIntro';
-import thoughtsIntro from '../components/ui/content/thoughtsIntro';
+// import lastHoliday from '../components/ui/content/lastHoliday';
+// import docsIntro from '../components/ui/content/docsIntro';
+// import thoughtsIntro from '../components/ui/content/thoughtsIntro';
 import { Tiles } from '../components/ui/tiles';
 
 export default function Home(): ReactNode {
@@ -73,28 +73,6 @@ export default function Home(): ReactNode {
     },
   ];
 
-  const cards = [
-    {
-      title: '技术笔记',
-      description:
-        '深入浅出的技术笔记，涵盖前端开发、编程语言等领域的学习心得。',
-      link: '/docs/HTML的渲染策略',
-      mdContent: docsIntro,
-    },
-    {
-      title: '洞察思考',
-      description: '关于技术、生活和成长的思考',
-      link: '/thoughts/RSC%20&%20Nextjs',
-      mdContent: thoughtsIntro,
-    },
-    {
-      title: '随想杂记',
-      description: '日常生活的杂谈与记录，分享生活中的点滴感悟。',
-      link: '/life',
-      mdContent: lastHoliday,
-    },
-  ];
-
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -109,7 +87,7 @@ export default function Home(): ReactNode {
         {/* ============================================ */}
         {/* Hero Section - 左文字右手风琴 */}
         {/* ============================================ */}
-        <section className="relative z-10 overflow-hidden px-6 py-12 md:py-20 lg:px-12">
+        <section className="relative z-10 overflow-hidden px-6 py-4 md:py-20 lg:px-12">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               {/* 左侧文字 */}
@@ -118,22 +96,24 @@ export default function Home(): ReactNode {
                   title={siteConfig.title}
                   subtitle="持续创作"
                 />
-                <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto md:mx-0">
-                  记录生活、分享思考
-                </p>
-                <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                  <Link
-                    to="/docs/HTML渲染策略"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
-                  >
-                    开始阅读 <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to="/life"
-                    className="inline-flex items-center gap-2 border border-border font-medium px-6 py-3 rounded-lg hover:bg-muted transition-colors"
-                  >
-                    随想杂记
-                  </Link>
+                <div className="md:ml-36">
+                  <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto md:mx-0">
+                    记录生活、分享思考
+                  </p>
+                  <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                    <Link
+                      to="/docs/HTML渲染策略"
+                      className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                    >
+                      开始阅读 <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <Link
+                      to="/life"
+                      className="inline-flex items-center gap-2 border border-border font-medium px-6 py-3 rounded-lg hover:bg-muted transition-colors"
+                    >
+                      随想杂记
+                    </Link>
+                  </div>
                 </div>
               </div>
 
@@ -148,7 +128,13 @@ export default function Home(): ReactNode {
                       }`}
                       onMouseEnter={() => setActiveIndex(index)}
                       onClick={() => {
-                        window.location.href = item.link;
+                        if (index === activeIndex) {
+                          // 已经展开：再次点击则跳转
+                          window.location.href = item.link;
+                        } else {
+                          // 未展开：先展开，不跳转（移动端首 tap 用于展开）
+                          setActiveIndex(index);
+                        }
                       }}
                     >
                       <img
@@ -216,7 +202,7 @@ export default function Home(): ReactNode {
         <section className="py-12 md:py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-12 mb-6">
             <h2 className="text-2xl font-bold text-foreground">生活片段</h2>
-            <p className="text-muted-foreground mt-2">用镜头记录的那些瞬间</p>
+            <p className="text-muted-foreground mt-2">拍的一些照片</p>
           </div>
           <div className="relative">
             <div className="flex gap-4 overflow-x-auto pb-6 px-6 lg:px-12 scrollbar-hide snap-x snap-mandatory">

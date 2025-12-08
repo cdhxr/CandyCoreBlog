@@ -29,9 +29,12 @@ function HandWrittenTitle({
           width="100%"
           height="100%"
           viewBox="0 0 1200 600"
+          preserveAspectRatio="xMinYMid meet"
           initial="hidden"
           animate="visible"
-          className="w-full h-full"
+          // 移动端放大并向左偏移，md 及以上恢复原位
+          className="w-full h-full transform -translate-y-6 md:translate-x-0 scale-110 md:scale-100"
+          aria-hidden
         >
           <title>KokonutUI</title>
           <motion.path
@@ -52,7 +55,7 @@ function HandWrittenTitle({
       </div>
       <div className="relative text-center z-10 flex flex-col items-center justify-center">
         <motion.h1
-          className="text-4xl md:text-6xl text-foreground tracking-tighter flex items-center gap-2"
+          className="text-5xl md:text-6xl text-foreground tracking-tighter flex items-center gap-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
