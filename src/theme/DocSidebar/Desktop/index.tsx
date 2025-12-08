@@ -26,6 +26,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }: Props) {
         // hidden 状态
         isHidden && 'lg:opacity-0 lg:invisible',
       )}>
+      {hideable && <CollapseButton onClick={onCollapse} />}
       {hideOnScroll && (
         <Logo
           tabIndex={-1}
@@ -40,7 +41,6 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }: Props) {
         />
       )}
       <Content path={path} sidebar={sidebar} />
-      {hideable && <CollapseButton onClick={onCollapse} />}
     </div>
   );
 }
