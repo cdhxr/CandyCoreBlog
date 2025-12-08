@@ -1,6 +1,11 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -66,6 +71,20 @@ const config: Config = {
         sidebarPath: './sidebars.ts',
       },
     ],
+    function () {
+      return {
+        name: 'webpack-alias-plugin',
+        configureWebpack() {
+          return {
+            resolve: {
+              alias: {
+                '@': path.resolve(__dirname, 'src'),
+              },
+            },
+          };
+        },
+      };
+    },
   ],
 
   themeConfig: {
