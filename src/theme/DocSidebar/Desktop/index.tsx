@@ -21,6 +21,9 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }: Props) {
         'lg:flex lg:flex-col lg:h-full',
         // padding-top 和 width 使用 Docusaurus 变量，需要 CSS
         'doc-sidebar',
+        // Aceternity Style Background and Border
+        'bg-neutral-50 dark:bg-neutral-900',
+        'border-r border-neutral-200 dark:border-neutral-800',
         // hideOnScroll 时去掉 padding-top
         hideOnScroll && 'lg:pt-0',
         // hidden 状态

@@ -41,7 +41,7 @@ export default function DocSidebarDesktopContent({
       className={clsx(
         'menu thin-scrollbar',
         // 响应式: min-width: 997px
-        'lg:grow lg:p-2',
+        'lg:grow lg:p-4',
         // scrollbar-gutter 需要在 CSS 中用 @supports 处理
         'sidebar-menu',
         // 公告栏显示时的 margin
