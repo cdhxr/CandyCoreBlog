@@ -25,15 +25,16 @@ export default function CollapseButton({ onClick }: Props): ReactNode {
         // 响应式: min-width: 997px (lg breakpoint)
         'lg:block! lg:sticky lg:bottom-0 lg:h-10 lg:rounded-none lg:border lg:border-solid',
         // hover/focus 通过 CSS 变量控制颜色
-        'collapse-sidebar-button',
+        'collapse-sidebar-button'
       )}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       <IconArrow
         className={clsx(
           // 响应式旋转
           'lg:rotate-180 lg:mt-1',
           // RTL 支持需要在 CSS 中处理
-          'collapse-sidebar-button-icon',
+          'collapse-sidebar-button-icon'
         )}
       />
     </button>

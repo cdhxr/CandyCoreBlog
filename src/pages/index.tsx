@@ -7,9 +7,9 @@ import Layout from '@theme/Layout';
 import { ArrowRight } from 'lucide-react';
 // import { TypographicCard } from '../components/TypographicCard';
 import { HandWrittenTitle } from '../components/ui/hand-writing-text';
-import lastHoliday from '../content/lastHoliday';
-import docsIntro from '../content/docsIntro';
-import thoughtsIntro from '../content/thoughtsIntro';
+import lastHoliday from '../components/ui/content/lastHoliday';
+import docsIntro from '../components/ui/content/docsIntro';
+import thoughtsIntro from '../components/ui/content/thoughtsIntro';
 import { Tiles } from '../components/ui/tiles';
 
 export default function Home(): ReactNode {
@@ -20,36 +20,90 @@ export default function Home(): ReactNode {
   // 数据定义
   // ============================================
   const accordionItems = [
-    { id: 1, title: '技术笔记', src: useBaseUrl('/img/travel/Japan/kyoto.jpg'), link: useBaseUrl('/docs/HTML渲染策略') },
-    { id: 2, title: '洞察思考', src: useBaseUrl('/img/travel/Japan/osaka.jpg'), link: useBaseUrl('/thoughts/RSC%20&%20Nextjs') },
-    { id: 3, title: '随想杂记', src: useBaseUrl('/img/travel/Japan/city.jpg'), link: useBaseUrl('/life') },
+    {
+      id: 1,
+      title: '技术笔记',
+      src: useBaseUrl('/img/travel/Japan/kyoto.jpg'),
+      link: useBaseUrl('/docs/HTML渲染策略'),
+    },
+    {
+      id: 2,
+      title: '洞察思考',
+      src: useBaseUrl('/img/travel/Japan/osaka.jpg'),
+      link: useBaseUrl('/thoughts/RSC%20&%20Nextjs'),
+    },
+    {
+      id: 3,
+      title: '随想杂记',
+      src: useBaseUrl('/img/travel/Japan/city.jpg'),
+      link: useBaseUrl('/life'),
+    },
   ];
 
   const photos = [
-    { src: useBaseUrl('/img/travel/Japan/kyoto.jpg'), alt: 'Kyoto', title: '京都' },
-    { src: useBaseUrl('/img/travel/Japan/osaka.jpg'), alt: 'Osaka', title: '大阪' },
-    { src: useBaseUrl('/img/travel/Japan/city.jpg'), alt: 'City', title: '城市' },
-    { src: useBaseUrl('/img/travel/Japan/kumiko_bench.jpg'), alt: 'Kumiko Bench', title: '久美子长椅' },
-    { src: useBaseUrl('/img/travel/Japan/dajishan.jpg'), alt: 'Dajishan', title: '大吉山' },
-    { src: useBaseUrl('/img/travel/Japan/goods.jpg'), alt: 'Goods', title: '周边' },
+    {
+      src: useBaseUrl('/img/travel/Japan/kyoto.jpg'),
+      alt: 'Kyoto',
+      title: '京都',
+    },
+    {
+      src: useBaseUrl('/img/travel/Japan/osaka.jpg'),
+      alt: 'Osaka',
+      title: '大阪',
+    },
+    {
+      src: useBaseUrl('/img/travel/Japan/city.jpg'),
+      alt: 'City',
+      title: '城市',
+    },
+    {
+      src: useBaseUrl('/img/travel/Japan/kumiko_bench.jpg'),
+      alt: 'Kumiko Bench',
+      title: '久美子长椅',
+    },
+    {
+      src: useBaseUrl('/img/travel/Japan/dajishan.jpg'),
+      alt: 'Dajishan',
+      title: '大吉山',
+    },
+    {
+      src: useBaseUrl('/img/travel/Japan/goods.jpg'),
+      alt: 'Goods',
+      title: '周边',
+    },
   ];
 
   const cards = [
-    { title: '技术笔记', description: '深入浅出的技术笔记，涵盖前端开发、编程语言等领域的学习心得。', link: '/docs/HTML的渲染策略', mdContent: docsIntro },
-    { title: '洞察思考', description: '关于技术、生活和成长的思考', link: '/thoughts/RSC%20&%20Nextjs', mdContent: thoughtsIntro },
-    { title: '随想杂记', description: '日常生活的杂谈与记录，分享生活中的点滴感悟。', link: '/life', mdContent: lastHoliday },
+    {
+      title: '技术笔记',
+      description:
+        '深入浅出的技术笔记，涵盖前端开发、编程语言等领域的学习心得。',
+      link: '/docs/HTML的渲染策略',
+      mdContent: docsIntro,
+    },
+    {
+      title: '洞察思考',
+      description: '关于技术、生活和成长的思考',
+      link: '/thoughts/RSC%20&%20Nextjs',
+      mdContent: thoughtsIntro,
+    },
+    {
+      title: '随想杂记',
+      description: '日常生活的杂谈与记录，分享生活中的点滴感悟。',
+      link: '/life',
+      mdContent: lastHoliday,
+    },
   ];
 
   return (
-    <Layout title={`${siteConfig.title}`} description="记录技术成长、分享生活感悟、探索思维边界">
+    <Layout
+      title={`${siteConfig.title}`}
+      description="记录技术成长、分享生活感悟、探索思维边界"
+    >
       <main className="relative min-h-screen bg-background">
         {/* 背景 Tiles 层 */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-          <Tiles 
-            rows={50} 
-            cols={8}
-            tileSize="md"
-          />
+          <Tiles rows={50} cols={8} tileSize="md" />
         </div>
 
         {/* ============================================ */}
@@ -60,15 +114,24 @@ export default function Home(): ReactNode {
             <div className="flex flex-col md:flex-row items-center justify-between gap-12">
               {/* 左侧文字 */}
               <div className="w-full md:w-1/2 text-center md:text-left">
-                <HandWrittenTitle title={siteConfig.title} subtitle="持续创作" />
+                <HandWrittenTitle
+                  title={siteConfig.title}
+                  subtitle="持续创作"
+                />
                 <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto md:mx-0">
-                  记录技术成长、分享生活感悟、探索思维边界
+                  记录生活、分享思考
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
-                  <Link to="/docs/HTML渲染策略" className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
+                  <Link
+                    to="/docs/HTML渲染策略"
+                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                  >
                     开始阅读 <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <Link to="/life" className="inline-flex items-center gap-2 border border-border font-medium px-6 py-3 rounded-lg hover:bg-muted transition-colors">
+                  <Link
+                    to="/life"
+                    className="inline-flex items-center gap-2 border border-border font-medium px-6 py-3 rounded-lg hover:bg-muted transition-colors"
+                  >
                     随想杂记
                   </Link>
                 </div>
@@ -80,13 +143,27 @@ export default function Home(): ReactNode {
                   {accordionItems.map((item, index) => (
                     <div
                       key={item.id}
-                      className={`relative h-[450px] rounded-2xl overflow-hidden cursor-pointer bg-muted transition-all duration-700 ease-in-out ${index === activeIndex ? 'w-[400px]' : 'w-[60px]'}`}
+                      className={`relative h-[450px] rounded-2xl overflow-hidden cursor-pointer bg-muted transition-all duration-700 ease-in-out ${
+                        index === activeIndex ? 'w-[400px]' : 'w-[60px]'
+                      }`}
                       onMouseEnter={() => setActiveIndex(index)}
-                      onClick={() => { window.location.href = item.link; }}
+                      onClick={() => {
+                        window.location.href = item.link;
+                      }}
                     >
-                      <img src={item.src} alt={item.title} className="absolute inset-0 z-0 w-full h-full object-cover" />
-                      <div className="absolute inset-0 z-10 bg-black/40 pointer-events-none" />
-                      <span className={`absolute z-20 text-white text-lg font-semibold whitespace-nowrap transition-all duration-300 ease-in-out ${index === activeIndex ? 'bottom-6 left-1/2 -translate-x-1/2 rotate-0' : 'w-auto text-left bottom-24 left-1/2 -translate-x-1/2 rotate-90'}`}>
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="absolute inset-0 z-0 w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 z-10 dark:bg-black/20 bg-white/10 pointer-events-none" />
+                      <span
+                        className={`absolute z-20 text-white text-lg font-semibold whitespace-nowrap transition-all duration-300 ease-in-out ${
+                          index === activeIndex
+                            ? 'bottom-6 left-1/2 -translate-x-1/2 rotate-0'
+                            : 'w-auto text-left bottom-24 left-1/2 -translate-x-1/2 rotate-90'
+                        }`}
+                      >
                         {item.title}
                       </span>
                     </div>
@@ -144,9 +221,16 @@ export default function Home(): ReactNode {
           <div className="relative">
             <div className="flex gap-4 overflow-x-auto pb-6 px-6 lg:px-12 scrollbar-hide snap-x snap-mandatory">
               {photos.map((photo, index) => (
-                <div key={index} className="shrink-0 snap-start first:pl-0 last:pr-6">
+                <div
+                  key={index}
+                  className="shrink-0 snap-start first:pl-0 last:pr-6"
+                >
                   <div className="group relative w-64 md:w-80 aspect-4/3 overflow-hidden rounded-2xl bg-muted">
-                    <img src={photo.src} alt={photo.alt} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
                     <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <p className="text-sm font-medium">{photo.title}</p>
@@ -157,7 +241,6 @@ export default function Home(): ReactNode {
             </div>
           </div>
         </section>
-
       </main>
     </Layout>
   );

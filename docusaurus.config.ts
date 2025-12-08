@@ -10,7 +10,7 @@ const __dirname = path.dirname(__filename);
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'My StoryBoard',
+  title: "CdCore's Blog",
   tagline: '这是标语',
   favicon: 'img/MyAvatar.png',
 
@@ -100,7 +100,7 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "CdCore's StoryBoard",
+      title: "CdCore's Blog",
       logo: {
         alt: 'My Site Logo',
         src: 'img/MyAvatar.png',
@@ -144,7 +144,7 @@ const config: Config = {
             {
               label: '洞察',
               to: '/thoughts/intro',
-            }
+            },
           ],
         },
         {
@@ -164,11 +164,11 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              html: `<span>althorchxr@gmail.com</span>`
+              html: `<span>althorchxr@gmail.com</span>`,
             },
             {
-              html: `<span>2816650923@qq.com</span>`
-            }
+              html: `<span>2816650923@qq.com</span>`,
+            },
           ],
         },
       ],
@@ -178,7 +178,6 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-
   } satisfies Preset.ThemeConfig,
 };
 

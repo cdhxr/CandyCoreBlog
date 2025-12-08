@@ -69,7 +69,6 @@
 }
 
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -99,18 +98,19 @@
     --card-foreground: oklch(0.145 0 0);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    /* 与 Docusaurus --ifm-color-primary: #1963ae 保持一致 */
+    --primary: #1963ae;
+    --primary-foreground: #ffffff;
+    --secondary: oklch(0.97 0.014 254.604);
+    --secondary-foreground: #1963ae;
+    --muted: oklch(0.97 0.014 254.604);
+    --muted-foreground: oklch(0.45 0.03 250);
+    --accent: oklch(0.95 0.02 250);
+    --accent-foreground: #1963ae;
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --border: oklch(0.9 0.02 250);
+    --input: oklch(0.9 0.02 250);
+    --ring: #1963ae;
 
     /* --- 亮色模式主题色 (来自 --nebula-500) --- */
     --ifm-color-primary: #1963ae;
@@ -137,24 +137,25 @@
 
   html[data-theme='dark'] {
     /* --- shadcn 深色主题变量 --- */
-    --background: oklch(20.8% 0.042 265.755);
+    --background: oklch(222, 25%, 12%);
     --foreground: oklch(0.985 0 0);
     --card: oklch(20.8% 0.042 265.755);
     --card-foreground: oklch(0.985 0 0);
     --popover: oklch(20.8% 0.042 265.755);
     --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.606 0.25 292.717);
-    --primary-foreground: oklch(0.969 0.016 293.756);
-    --secondary: oklch(27.9% 0.041 260.031);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(27.9% 0.041 260.031);
-    --muted-foreground: oklch(0.705 0.015 286.067);
-    --accent: oklch(27.9% 0.041 260.031);
-    --accent-foreground: oklch(0.985 0 0);
+    /* 与 Docusaurus --ifm-color-primary: #b3f2ff 保持一致 */
+    --primary: #b3f2ff;
+    --primary-foreground: #0a1929;
+    --secondary: oklch(0.25 0.04 250);
+    --secondary-foreground: #b3f2ff;
+    --muted: oklch(0.25 0.04 250);
+    --muted-foreground: oklch(0.7 0.03 250);
+    --accent: oklch(0.3 0.05 250);
+    --accent-foreground: #b3f2ff;
     --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
+    --border: oklch(1 0 0 / 15%);
     --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.38 0.189 293.745);
+    --ring: #b3f2ff;
 
     /* --- Docusaurus 深色主题 --- */
     --ifm-color-primary: #b3f2ff;
@@ -177,7 +178,8 @@
   }
 
   html {
-    font: var(--ifm-font-size-base) / var(--ifm-line-height-base) var(--ifm-font-family-base);
+    font: var(--ifm-font-size-base) / var(--ifm-line-height-base)
+      var(--ifm-font-family-base);
   }
 }
 
@@ -191,26 +193,28 @@
   width: 24px;
   height: 24px;
   display: flex;
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
 }
 
 html[data-theme='dark'] .header-github-link::before {
-  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='white' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E")
+    no-repeat;
 }
 
 /* ========== 文章内容使用霞鹜文楷 ========== */
 /* 文档与博客主栏内容区域 */
-.theme-doc-markdown>*,
-.theme-blog-post>* {
+.theme-doc-markdown > *,
+.theme-blog-post > * {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Category 分类页面宽度限制（排除 breadcrumbs） */
-[class*="generatedIndexPage_"]>header,
-[class*="generatedIndexPage_"]>article,
-[class*="generatedIndexPage_"]>footer {
+[class*='generatedIndexPage_'] > header,
+[class*='generatedIndexPage_'] > article,
+[class*='generatedIndexPage_'] > footer {
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
@@ -239,8 +243,8 @@ article header {
 
 article header h1,
 article header h2,
-[class*="blogPostTitle"],
-[class*="blogPostHeader"] {
+[class*='blogPostTitle'],
+[class*='blogPostHeader'] {
   font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;
 }
 
@@ -253,7 +257,7 @@ article header h2,
 
 .blog-list-page header h1,
 .blog-list-page header h2,
-[class*="blogListTitle"] {
+[class*='blogListTitle'] {
   font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;
 }
 
@@ -324,7 +328,7 @@ article header h2,
 }
 
 [data-theme='dark']:root {
-  --docusaurus-collapse-button-bg: rgb(255 255 255 / 5%);
+  --docusaurus-collapse-button-bg: rgba(255, 255, 255, 0.05);
   --docusaurus-collapse-button-bg-hover: rgb(255 255 255 / 10%);
 }
 

@@ -22,13 +22,14 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }: Props) {
         // padding-top 和 width 使用 Docusaurus 变量，需要 CSS
         'doc-sidebar',
         // Aceternity Style Background and Border
-        'bg-neutral-50 dark:bg-neutral-900',
-        'border-r border-neutral-200 dark:border-neutral-800',
+        'bg-slate-50 dark:bg-background',
+        'border-r border-slate-200 dark:border-slate-800',
         // hideOnScroll 时去掉 padding-top
         hideOnScroll && 'lg:pt-0',
         // hidden 状态
-        isHidden && 'lg:opacity-0 lg:invisible',
-      )}>
+        isHidden && 'lg:opacity-0 lg:invisible'
+      )}
+    >
       {hideable && <CollapseButton onClick={onCollapse} />}
       {hideOnScroll && (
         <Logo
@@ -39,7 +40,7 @@ function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }: Props) {
             // 响应式显示
             'lg:flex! lg:items-center',
             // 高度和 margin 使用 Docusaurus 变量
-            'doc-sidebar-logo',
+            'doc-sidebar-logo'
           )}
         />
       )}
