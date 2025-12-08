@@ -228,6 +228,35 @@ article {
   font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;
 }
 
+/* ========== 博客页 Header 使用霞鹜文楷 ========== */
+/* 博客文章标题区域 */
+article header {
+  font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+article header h1,
+article header h2,
+[class*="blogPostTitle"],
+[class*="blogPostHeader"] {
+  font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;
+}
+
+/* 博客列表页标题 */
+.blog-list-page header {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-list-page header h1,
+.blog-list-page header h2,
+[class*="blogListTitle"] {
+  font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;
+}
+
 /* 文章标题 */
 .markdown h1 {
   font-family: 'LXGW WenKai', 'Outfit', 'Noto Serif SC', Georgia, serif;

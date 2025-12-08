@@ -41,16 +41,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blogs/健康话题的思考.md",
+                "file": "notes/style system.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "健康话题的思考"
+              "title": "style system"
+            }
+          },
+          {
+            "id": "dd1d6075bf16aa5d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "thoughts/如何设计良好的react代码.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "如何设计良好的react代码"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -227,8 +241,10 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "79d2d2d591357674",
+  "active": "adce2d0c460692ca",
   "lastOpenFiles": [
+    "notes/style system.md",
+    "thoughts/如何设计良好的react代码.md",
     "notes/前端工程化全史 1995-2025.md",
     "blogs/健康话题的思考.md",
     "blogs/LastHoliday.md",
@@ -244,7 +260,6 @@
     "thoughts/assets/RSC & Nextjs/file-20251208161755692 1.png",
     "assets/RSC & Nextjs",
     "notes/HTML渲染策略.md",
-    "notes/style system.md",
     "notes/react设计策略与哲学.md",
     "notes/assets/HTML渲染策略/file-20251208160457434.png",
     "notes/assets/HTML渲染策略/file-20251208160334785.png",
@@ -274,7 +289,6 @@
     "React/React Philosophy/React Philosophy.md",
     "gemini-scribe/AGENTS.md",
     "对象的深度遍历.md",
-    "手写题/发布订阅模式.md",
     "未命名.canvas"
   ]
 }

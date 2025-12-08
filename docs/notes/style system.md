@@ -3,13 +3,7 @@ description: ""
 date: 2025-12-08T15:47
 toc_max_heading_level: 4
 ---
-来源：
-
-
-
 现在的UI或者样式库的功能大致可以分为三类
-
-
 
 * CSS的扩展：扩展了CSS的功能 —— taliwind
 
@@ -19,7 +13,7 @@ toc_max_heading_level: 4
 
   ![](assets/style%20system/file-20251208154822340.png)
 
-# Taliwind
+## Taliwind
 
 原生CSS本质上和组件系统冲突，因为你不得不在不同地方定义组件
 
@@ -40,7 +34,7 @@ CSS 是 **全局的、无作用域隔离的** ，这跟组件 **局部封装、�
 
 随着Taliwind的开放性和扩展性，他已经不再是一种CSS的写法，而可以被视作一种CSS extension，CSS++
 
-# best practice？
+## best practice？
 
 三者各有各的缺陷
 
