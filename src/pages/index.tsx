@@ -5,23 +5,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import { BookOpen, Lightbulb, Pencil, ArrowRight } from 'lucide-react';
 import { TypographicCard } from '../components/TypographicCard';
+import { HandWrittenTitle } from '../components/ui/hand-writing-text';
 import lastHoliday from '../content/lastHoliday';
 import docsIntro from '../content/docsIntro';
 import thoughtsIntro from '../content/thoughtsIntro';
 
 function HeroSection() {
   const { siteConfig } = useDocusaurusContext();
-  
+
   return (
     <section className="relative overflow-hidden px-6 py-16 md:py-24 lg:px-12">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl mb-6 leading-tight">
-            {siteConfig.title}
-          </h1>
-          <p className="text-lg text-muted-foreground sm:text-xl mb-10 max-w-lg leading-relaxed">
-            持续创作
-          </p>
+          <HandWrittenTitle
+            title={siteConfig.title}
+            subtitle="持续创作"
+          />
           <div className="flex flex-wrap gap-6 justify-center">
             <Link to="/docs/intro" className="group inline-flex items-center text-base font-medium">
               <span className="mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:scale-110">
@@ -122,7 +121,7 @@ function FeaturesSection() {
               探索最新的技术文档、生活记录和思考感悟。
             </p>
             <Link to="/blog" className="inline-flex items-center text-sm font-medium hover:underline underline-offset-4">
-               查看归档 <ArrowRight className="ml-1 h-4 w-4" />
+              查看归档 <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </div>
 
