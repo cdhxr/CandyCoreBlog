@@ -118,9 +118,23 @@
               "icon": "lucide-file",
               "title": "HTML渲染策略"
             }
+          },
+          {
+            "id": "26146ef8d19f7c9b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "thoughts/状态管理库与组件解耦.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "状态管理库与组件解耦"
+            }
           }
         ],
-        "currentTab": 7
+        "currentTab": 8
       }
     ],
     "direction": "vertical"
@@ -297,8 +311,16 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "834bfbc2d3208686",
+  "active": "adce2d0c460692ca",
   "lastOpenFiles": [
+    "thoughts/assets/状态管理库与组件解耦",
+    "thoughts/assets/状态管理库与组件解耦/file-20251208215354363.png",
+    "thoughts/assets/状态管理库与组件解耦/file-20251208215354363 1.png",
+    "thoughts/assets/状态管理库与组件解耦/file-20251208215354363 2.png",
+    "assets/状态管理库与组件解耦",
+    "assets",
+    "notes/HTML渲染策略.md",
+    "thoughts/状态管理库与组件解耦.md",
     "thoughts/RSC & Nextjs.md",
     "notes/八股/apply，bind，new，prototype chain，object，Scope....md",
     "thoughts/intro.md",
@@ -321,12 +343,8 @@
     "thoughts/assets/RSC & Nextjs/file-20251208161755692.png",
     "thoughts/assets/RSC & Nextjs/file-20251208161755692 1.png",
     "assets/RSC & Nextjs",
-    "notes/HTML渲染策略.md",
     "notes/react设计策略与哲学.md",
     "notes/assets/HTML渲染策略/file-20251208160457434.png",
-    "notes/assets/HTML渲染策略/file-20251208160334785.png",
-    "notes/assets/HTML渲染策略/file-20251208160253505.png",
-    "notes/assets/HTML渲染策略/file-20251208155916536.png",
     "notes/assets/HTML渲染策略",
     "notes/assets/style system",
     "notes/react Rendering strategy.md",
@@ -335,16 +353,12 @@
     "intro.md",
     "thoughts/计算机相关/前端相关/React Client Framework.md",
     "thoughts/计算机相关/前端相关/Style System.md",
-    "thoughts/计算机相关/前端相关/assets/Style System",
-    "thoughts/计算机相关/前端相关/assets",
     "thoughts/计算机相关/前端相关/渲染策略——HTML到达浏览器的所有方法.md",
     "_templates/docusaurus.md",
     "未命名 1.md",
     "gemini-scribe/Prompts/example-expert.md",
     "React/React State Management.md",
     "React/React Rendering Summary.md",
-    "React/React Philosophy/React history.md",
-    "React Questions.md",
     "未命名.canvas"
   ]
 }
