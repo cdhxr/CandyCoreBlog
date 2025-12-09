@@ -8,133 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ead205f350c0b320",
+            "id": "52c5101840315efa",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "notes/HTML渲染策略.md",
+                "file": "blogs/健康话题的思考.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "HTML渲染策略"
-            }
-          },
-          {
-            "id": "8e919ce8c18f2ff6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/前端工程化全史 1995-2025.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "前端工程化全史 1995-2025"
-            }
-          },
-          {
-            "id": "79d2d2d591357674",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/style system.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "style system"
-            }
-          },
-          {
-            "id": "dd1d6075bf16aa5d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "thoughts/如何设计良好的react代码.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "如何设计良好的react代码"
-            }
-          },
-          {
-            "id": "45a6e73f01e2ce78",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/八股/计算机网络（层级，协议，DNS，CDN，CORS）.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "计算机网络（层级，协议，DNS，CDN，CORS）"
-            }
-          },
-          {
-            "id": "d9c399cb0e1a24b8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/八股/js GC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "js GC"
-            }
-          },
-          {
-            "id": "11d735b9d1465489",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/八股/apply，bind，new，prototype chain，object，Scope....md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "apply，bind，new，prototype chain，object，Scope..."
-            }
-          },
-          {
-            "id": "834bfbc2d3208686",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "notes/HTML渲染策略.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "HTML渲染策略"
-            }
-          },
-          {
-            "id": "26146ef8d19f7c9b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "thoughts/状态管理库与组件解耦.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "状态管理库与组件解耦"
+              "title": "健康话题的思考"
             }
           }
-        ],
-        "currentTab": 8
+        ]
       }
     ],
     "direction": "vertical"
@@ -311,8 +198,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "adce2d0c460692ca",
+  "active": "52c5101840315efa",
   "lastOpenFiles": [
+    "notes/八股/浏览器渲染过程.md",
+    "notes/八股/assets/浏览器渲染过程/file-20251209172227661.png",
+    "notes/八股/assets/浏览器渲染过程/file-20251209172121920.png",
+    "notes/八股/assets/浏览器渲染过程/file-20251209171950551.png",
+    "notes/八股/assets/浏览器渲染过程/file-20251209171736187.png",
+    "notes/八股/assets/浏览器渲染过程/file-20251209171647547.png",
+    "notes/八股/assets/浏览器渲染过程",
+    "notes/八股/assets",
+    "notes/八股/计算机网络（层级，协议，DNS，CDN，CORS）.md",
+    "thoughts/状态管理库与组件解耦.md",
+    "notes/八股/对象的深度遍历.md",
     "thoughts/assets/状态管理库与组件解耦",
     "thoughts/assets/状态管理库与组件解耦/file-20251208215354363.png",
     "thoughts/assets/状态管理库与组件解耦/file-20251208215354363 1.png",
@@ -320,14 +218,12 @@
     "assets/状态管理库与组件解耦",
     "assets",
     "notes/HTML渲染策略.md",
-    "thoughts/状态管理库与组件解耦.md",
     "thoughts/RSC & Nextjs.md",
     "notes/八股/apply，bind，new，prototype chain，object，Scope....md",
     "thoughts/intro.md",
     "notes/intro.md",
     "notes/八股/发布订阅模式.md",
     "notes/八股/js GC.md",
-    "notes/八股/计算机网络（层级，协议，DNS，CDN，CORS）.md",
     "thoughts/如何设计良好的react代码.md",
     "notes/八股",
     "notes/style system.md",
@@ -338,18 +234,10 @@
     "thoughts/assets",
     "thoughts/assets/RSC & Nextjs/file-20251208161755689.png",
     "thoughts/assets/RSC & Nextjs/file-20251208161755689 1.png",
-    "thoughts/assets/RSC & Nextjs/file-20251208161755691.png",
-    "thoughts/assets/RSC & Nextjs/file-20251208161755691 1.png",
-    "thoughts/assets/RSC & Nextjs/file-20251208161755692.png",
-    "thoughts/assets/RSC & Nextjs/file-20251208161755692 1.png",
     "assets/RSC & Nextjs",
     "notes/react设计策略与哲学.md",
-    "notes/assets/HTML渲染策略/file-20251208160457434.png",
     "notes/assets/HTML渲染策略",
-    "notes/assets/style system",
     "notes/react Rendering strategy.md",
-    "notes/assets/react Rendering strategy",
-    "notes/assets",
     "intro.md",
     "thoughts/计算机相关/前端相关/React Client Framework.md",
     "thoughts/计算机相关/前端相关/Style System.md",
@@ -357,8 +245,6 @@
     "_templates/docusaurus.md",
     "未命名 1.md",
     "gemini-scribe/Prompts/example-expert.md",
-    "React/React State Management.md",
-    "React/React Rendering Summary.md",
     "未命名.canvas"
   ]
 }
