@@ -1,3 +1,9 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
 /* LXGW WenKai 霞鹜文楷 - 使用 CDN */
 @import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css');
 
@@ -6,12 +12,6 @@
 
 /* Outfit 英文字体 - 使用 Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-
-@layer theme, base, components, utilities;
-@import 'tailwindcss/theme.css' layer(theme) important;
-@import 'tailwindcss/utilities.css' layer(utilities) important;
-
-@plugin 'tailwindcss-animate';
 
 /* 如果使用本地字体，请注释上面的 @import 并取消下面的注释 */
 /*
@@ -31,6 +31,31 @@
   font-display: swap;
 }
 */
+
+/* 如果使用本地字体，请注释上面的 @import 并取消下面的注释 */
+/*
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/fonts/LXGWWenKai-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+/* Tailwind CSS v4 配置 */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme) important;
+@import 'tailwindcss/utilities.css' layer(utilities) important;
+
+@plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is([data-theme="dark"] *));
 
