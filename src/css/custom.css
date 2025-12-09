@@ -1,9 +1,4 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
+/* ========== 字体导入 ========== */
 /* LXGW WenKai 霞鹜文楷 - 使用 CDN */
 @import url('https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css');
 
@@ -13,44 +8,7 @@
 /* Outfit 英文字体 - 使用 Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* 如果使用本地字体，请注释上面的 @import 并取消下面的注释 */
-/*
-@font-face {
-  font-family: 'LXGW WenKai';
-  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'LXGW WenKai';
-  src: url('/fonts/LXGWWenKai-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-
-/* 如果使用本地字体，请注释上面的 @import 并取消下面的注释 */
-/*
-@font-face {
-  font-family: 'LXGW WenKai';
-  src: url('/fonts/LXGWWenKai-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'LXGW WenKai';
-  src: url('/fonts/LXGWWenKai-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-*/
-/* Tailwind CSS v4 配置 */
+/* ========== Tailwind CSS v4 配置 (模板基础) ========== */
 @layer theme, base, components, utilities;
 @import 'tailwindcss/theme.css' layer(theme) important;
 @import 'tailwindcss/utilities.css' layer(utilities) important;
@@ -58,7 +16,6 @@
 @plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is([data-theme="dark"] *));
-@source "../src";
 
 /* shadcn 主题映射 */
 @theme inline {
@@ -81,13 +38,42 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --animate-gradient: gradient 8s linear infinite;
+
+  @keyframes gradient {
+    to {
+      background-position: var(--bg-size, 300%) 0;
+    }
+  }
 }
 
 @layer base {
+  /*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
   *,
   ::after,
   ::before,
@@ -130,6 +116,19 @@
     --border: oklch(0.9 0.02 250);
     --input: oklch(0.9 0.02 250);
     --ring: #1963ae;
+    --chart-1: oklch(0.646 0.222 41.116);
+    --chart-2: oklch(0.6 0.118 184.704);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+    --sidebar: oklch(0.985 0 0);
+    --sidebar-foreground: oklch(0.145 0 0);
+    --sidebar-primary: oklch(0.205 0 0);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.97 0 0);
+    --sidebar-accent-foreground: oklch(0.205 0 0);
+    --sidebar-border: oklch(0.922 0 0);
+    --sidebar-ring: oklch(0.708 0 0);
 
     /* --- 亮色模式主题色 (来自 --nebula-500) --- */
     --ifm-color-primary: #1963ae;
@@ -175,6 +174,19 @@
     --border: oklch(1 0 0 / 15%);
     --input: oklch(1 0 0 / 15%);
     --ring: #b3f2ff;
+    --chart-1: oklch(0.811 0.111 293.571);
+    --chart-2: oklch(0.606 0.25 292.717);
+    --chart-3: oklch(0.541 0.281 293.009);
+    --chart-4: oklch(0.491 0.27 292.581);
+    --chart-5: oklch(0.432 0.232 292.759);
+    --sidebar: oklch(20.8% 0.042 265.755);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.606 0.25 292.717);
+    --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+    --sidebar-accent: oklch(27.9% 0.041 260.031);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.38 0.189 293.745);
 
     /* --- Docusaurus 深色主题 --- */
     --ifm-color-primary: #b3f2ff;
@@ -455,4 +467,55 @@ article header h2,
 /* Removing default border on right of menu items if docusaurus has one */
 .menu {
   background-color: transparent;
+}
+
+/* ========== 模板工具类和组件 ========== */
+
+@utility blog-tags {
+  & b {
+    @apply hidden;
+  }
+}
+
+@layer components {
+  .background-grid {
+    @apply relative z-0 bg-slate-100;
+    @apply dark:bg-[#0c1222];
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      content: '';
+      opacity: 0.65;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240)' stroke-dasharray='5 3' transform='scale(1, -1)' %3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+      mask-image: linear-gradient(transparent, black, transparent);
+    }
+  }
+
+  .background-grid--fade-in {
+    @apply bg-transparent bg-linear-to-t from-slate-100 via-slate-100;
+    @apply dark:bg-transparent dark:from-[#0c1222] dark:via-[#0c1222];
+
+    &::before {
+      @apply bg-bottom-left;
+
+      mask-image: linear-gradient(transparent, black, black);
+    }
+  }
+
+  .background-grid--fade-out {
+    @apply bg-transparent bg-linear-to-b from-slate-100 via-slate-100;
+    @apply dark:bg-transparent dark:from-[#0c1222] dark:via-[#0c1222];
+
+    &::before {
+      mask-image: linear-gradient(black, black, transparent);
+    }
+  }
+
+  .background-image {
+    &--fade-out {
+      mask-image: linear-gradient(black, black, transparent);
+    }
+  }
 }

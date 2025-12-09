@@ -1,11 +1,6 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -16,6 +11,7 @@ const config: Config = {
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
+    experimental_faster: true, // Enable Docusaurus Faster
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
@@ -62,21 +58,19 @@ const config: Config = {
   ],
 
   plugins: [
-    function () {
-      return {
-        name: 'webpack-alias-plugin',
-        configureWebpack() {
-          return {
-            resolve: {
-              alias: {
-                '@': path.resolve(__dirname, 'src'),
-              },
-            },
-          };
-        },
-      };
-    },
+    ['./src/plugins/webpack-alias.js', {}],
     ['./src/plugins/tailwind-config.js', {}],
+    [
+      'ideal-image',
+      {
+        quality: 70,
+        max: 1030,
+        min: 640,
+        steps: 2,
+        // Use false to debug, but it incurs huge perf costs
+        disableInDev: true,
+      },
+    ],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -180,6 +174,23 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  themes: [
+    [
+      require.resolve('@easyops-cn/docusaurus-search-local'),
+      {
+        indexPages: true,
+        docsRouteBasePath: ['/docs', '/thoughts'],
+        hashed: true,
+        language: ['en', 'zh'],
+        highlightSearchTermsOnTargetPage: false,
+        searchResultContextMaxLength: 50,
+        searchResultLimits: 8,
+        searchBarShortcut: true,
+        searchBarShortcutHint: true,
+      },
+    ],
+  ],
 };
 
 export default config;
