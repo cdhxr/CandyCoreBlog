@@ -58,6 +58,7 @@
 @plugin 'tailwindcss-animate';
 
 @custom-variant dark (&:is([data-theme="dark"] *));
+@source "../src";
 
 /* shadcn 主题映射 */
 @theme inline {

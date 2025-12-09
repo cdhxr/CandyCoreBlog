@@ -38,8 +38,8 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'zh',
-    locales: ['zh', 'en'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
@@ -62,16 +62,6 @@ const config: Config = {
   ],
 
   plugins: [
-    ['./src/plugins/tailwind-config.js', {}],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'thoughts',
-        path: 'docs/thoughts',
-        routeBasePath: 'thoughts',
-        sidebarPath: './sidebars.ts',
-      },
-    ],
     function () {
       return {
         name: 'webpack-alias-plugin',
@@ -86,6 +76,16 @@ const config: Config = {
         },
       };
     },
+    ['./src/plugins/tailwind-config.js', {}],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'thoughts',
+        path: 'docs/thoughts',
+        routeBasePath: 'thoughts',
+        sidebarPath: './sidebars.ts',
+      },
+    ],
   ],
 
   themeConfig: {
