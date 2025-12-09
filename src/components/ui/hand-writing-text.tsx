@@ -36,7 +36,6 @@ function HandWrittenTitle({
           className="w-full h-full transform -translate-y-6 md:translate-x-0 scale-110 md:scale-100"
           aria-hidden
         >
-          <title>KokonutUI</title>
           <motion.path
             d="M 950 90 
                            C 1250 300, 1050 480, 600 520
