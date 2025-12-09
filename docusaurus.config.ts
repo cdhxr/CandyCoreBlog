@@ -60,17 +60,18 @@ const config: Config = {
   plugins: [
     ['./src/plugins/webpack-alias.js', {}],
     ['./src/plugins/tailwind-config.js', {}],
-    [
-      'ideal-image',
-      {
-        quality: 70,
-        max: 1030,
-        min: 640,
-        steps: 2,
-        // Use false to debug, but it incurs huge perf costs
-        disableInDev: true,
-      },
-    ],
+    // Temporarily disabled due to sharp module issue
+    // [
+    //   'ideal-image',
+    //   {
+    //     quality: 70,
+    //     max: 1030,
+    //     min: 640,
+    //     steps: 2,
+    //     // Use false to debug, but it incurs huge perf costs
+    //     disableInDev: true,
+    //   },
+    // ],
     [
       '@docusaurus/plugin-content-docs',
       {

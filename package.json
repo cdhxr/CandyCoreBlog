@@ -20,7 +20,6 @@
     "@docusaurus/faster": "^3.9.2",
     "@docusaurus/plugin-content-blog": "^3.9.2",
     "@docusaurus/plugin-content-docs": "^3.9.2",
-    "@docusaurus/plugin-ideal-image": "^3.9.2",
     "@docusaurus/preset-classic": "3.9.2",
     "@docusaurus/remark-plugin-npm2yarn": "^3.9.2",
     "@easyops-cn/docusaurus-search-local": "^0.52.1",

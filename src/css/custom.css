@@ -8,17 +8,38 @@
 /* Outfit 英文字体 - 使用 Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
-/* ========== Tailwind CSS v4 配置 (模板基础) ========== */
-@layer theme, base, components, utilities;
-@import 'tailwindcss/theme.css' layer(theme) important;
-@import 'tailwindcss/utilities.css' layer(utilities) important;
+/* ========== Tailwind CSS v4 配置 ========== */
+@import 'tailwindcss/theme.css';
+@import 'tailwindcss/utilities.css';
 
-@plugin 'tailwindcss-animate';
+/* ========== 基础样式重置 ========== */
+*,
+::after,
+::before,
+::backdrop,
+::file-selector-button {
+  border-color: var(--border, currentColor);
+}
 
-@custom-variant dark (&:is([data-theme="dark"] *));
+* {
+  scrollbar-width: thin;
+}
 
-/* shadcn 主题映射 */
-@theme inline {
+html {
+  font: var(--ifm-font-size-base) / var(--ifm-line-height-base)
+    var(--ifm-font-family-base);
+}
+
+/* ========== Tailwind 主题映射 ========== */
+@keyframes gradient {
+  to {
+    background-position: var(--bg-size, 300%) 0;
+  }
+}
+
+/* ========== shadcn 主题变量 ========== */
+:root {
+  /* Tailwind 颜色映射 */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -55,163 +76,132 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-
   --animate-gradient: gradient 8s linear infinite;
 
-  @keyframes gradient {
-    to {
-      background-position: var(--bg-size, 300%) 0;
-    }
-  }
+  /* --- shadcn 主题变量 --- */
+  --radius: 0.65rem;
+  --background: oklch(100% 0.00011 271.152 / 0.948);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  /* 与 Docusaurus --ifm-color-primary: #1963ae 保持一致 */
+  --primary: #1963ae;
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.97 0.014 254.604);
+  --secondary-foreground: #1963ae;
+  --muted: oklch(0.97 0.014 254.604);
+  --muted-foreground: oklch(0.45 0.03 250);
+  --accent: oklch(0.95 0.02 250);
+  --accent-foreground: #1963ae;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0.02 250);
+  --input: oklch(0.9 0.02 250);
+  --ring: #1963ae;
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
 }
 
-@layer base {
-  /*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
+html[data-theme='dark'] {
+  /* --- shadcn 深色主题变量 --- */
+  --background: oklch(222, 25%, 12%);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(20.8% 0.042 265.755);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(20.8% 0.042 265.755);
+  --popover-foreground: oklch(0.985 0 0);
+  /* 与 Docusaurus --ifm-color-primary: #b3f2ff 保持一致 */
+  --primary: #b3f2ff;
+  --primary-foreground: #0a1929;
+  --secondary: oklch(0.25 0.04 250);
+  --secondary-foreground: #b3f2ff;
+  --muted: oklch(0.25 0.04 250);
+  --muted-foreground: oklch(0.7 0.03 250);
+  --accent: oklch(0.3 0.05 250);
+  --accent-foreground: #b3f2ff;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 15%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: #b3f2ff;
+  --chart-1: oklch(0.811 0.111 293.571);
+  --chart-2: oklch(0.606 0.25 292.717);
+  --chart-3: oklch(0.541 0.281 293.009);
+  --chart-4: oklch(0.491 0.27 292.581);
+  --chart-5: oklch(0.432 0.232 292.759);
+  --sidebar: oklch(20.8% 0.042 265.755);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.606 0.25 292.717);
+  --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
+  --sidebar-accent: oklch(27.9% 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.38 0.189 293.745);
+}
 
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--border, currentColor);
-  }
+/* ========== Docusaurus 变量覆盖 ========== */
+:root {
+  /* --- 字体变量 --- */
+  --font-outfit: 'Outfit', system-ui, -apple-system, sans-serif;
+  --font-wenkai: 'LXGW WenKai', 'Noto Serif SC', Georgia, serif;
 
-  * {
-    scrollbar-width: thin;
-  }
+  /* Docusaurus 默认字体使用 Outfit */
+  --ifm-font-family-base: var(--font-outfit);
+  --ifm-heading-font-family: var(--font-outfit);
 
-  :root {
-    /* --- 字体变量 --- */
-    --font-outfit: 'Outfit', system-ui, -apple-system, sans-serif;
-    --font-wenkai: 'LXGW WenKai', 'Noto Serif SC', Georgia, serif;
+  /* --- 亮色模式主题色 (来自 --nebula-500) --- */
+  --ifm-color-primary: #1963ae;
+  --ifm-color-primary-dark: #174a9d;
+  --ifm-color-primary-darker: #154694;
+  --ifm-color-primary-darkest: #12397a;
+  --ifm-color-primary-light: #1b5abf;
+  --ifm-color-primary-lighter: #1d5ec8;
+  --ifm-color-primary-lightest: #236bdf;
+  --ifm-background-color: hsl(0, 0%, 98%);
 
-    /* Docusaurus 默认字体使用 Outfit */
-    --ifm-font-family-base: var(--font-outfit);
-    --ifm-heading-font-family: var(--font-outfit);
+  /* --- NavBar 颜色自定义 --- */
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-navbar-text-color: #333333;
+  --ifm-navbar-link-color: #333333;
+  --ifm-navbar-link-hover-color: #1963ae;
+  --ifm-navbar-item-padding-horizontal: 12px;
+  --ifm-navbar-item-padding-vertical: 8px;
 
-    /* --- shadcn 主题变量 --- */
-    --radius: 0.65rem;
-    --background: oklch(100% 0.00011 271.152 / 0.948);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    /* 与 Docusaurus --ifm-color-primary: #1963ae 保持一致 */
-    --primary: #1963ae;
-    --primary-foreground: #ffffff;
-    --secondary: oklch(0.97 0.014 254.604);
-    --secondary-foreground: #1963ae;
-    --muted: oklch(0.97 0.014 254.604);
-    --muted-foreground: oklch(0.45 0.03 250);
-    --accent: oklch(0.95 0.02 250);
-    --accent-foreground: #1963ae;
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.9 0.02 250);
-    --input: oklch(0.9 0.02 250);
-    --ring: #1963ae;
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+  /* 你原有的设置 (保留) */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
 
-    /* --- 亮色模式主题色 (来自 --nebula-500) --- */
-    --ifm-color-primary: #1963ae;
-    --ifm-color-primary-dark: #174a9d;
-    --ifm-color-primary-darker: #154694;
-    --ifm-color-primary-darkest: #12397a;
-    --ifm-color-primary-light: #1b5abf;
-    --ifm-color-primary-lighter: #1d5ec8;
-    --ifm-color-primary-lightest: #236bdf;
-    --ifm-background-color: hsl(0, 0%, 98%);
+html[data-theme='dark'] {
+  /* --- Docusaurus 深色主题 --- */
+  --ifm-color-primary: #b3f2ff;
+  --ifm-color-primary-dark: #88ebff;
+  --ifm-color-primary-darker: #72e7ff;
+  --ifm-color-primary-darkest: #31dcff;
+  --ifm-color-primary-light: #def9ff;
+  --ifm-color-primary-lighter: #f4fdff;
+  --ifm-color-primary-lightest: #ffffff;
+  --ifm-background-color: hsl(222, 25%, 12%);
 
-    /* --- NavBar 颜色自定义 --- */
-    --ifm-navbar-background-color: #ffffff;
-    --ifm-navbar-text-color: #333333;
-    --ifm-navbar-link-color: #333333;
-    --ifm-navbar-link-hover-color: #1963ae;
-    --ifm-navbar-item-padding-horizontal: 12px;
-    --ifm-navbar-item-padding-vertical: 8px;
+  /* --- 深色模式 NavBar 颜色自定义 --- */
+  --ifm-navbar-background-color: #1b1b1d;
+  --ifm-navbar-text-color: #ffffff;
+  --ifm-navbar-link-color: #ffffff;
+  --ifm-navbar-link-hover-color: #b3f2ff;
 
-    /* 你原有的设置 (保留) */
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  }
-
-  html[data-theme='dark'] {
-    /* --- shadcn 深色主题变量 --- */
-    --background: oklch(222, 25%, 12%);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(20.8% 0.042 265.755);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(20.8% 0.042 265.755);
-    --popover-foreground: oklch(0.985 0 0);
-    /* 与 Docusaurus --ifm-color-primary: #b3f2ff 保持一致 */
-    --primary: #b3f2ff;
-    --primary-foreground: #0a1929;
-    --secondary: oklch(0.25 0.04 250);
-    --secondary-foreground: #b3f2ff;
-    --muted: oklch(0.25 0.04 250);
-    --muted-foreground: oklch(0.7 0.03 250);
-    --accent: oklch(0.3 0.05 250);
-    --accent-foreground: #b3f2ff;
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 15%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: #b3f2ff;
-    --chart-1: oklch(0.811 0.111 293.571);
-    --chart-2: oklch(0.606 0.25 292.717);
-    --chart-3: oklch(0.541 0.281 293.009);
-    --chart-4: oklch(0.491 0.27 292.581);
-    --chart-5: oklch(0.432 0.232 292.759);
-    --sidebar: oklch(20.8% 0.042 265.755);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.606 0.25 292.717);
-    --sidebar-primary-foreground: oklch(0.969 0.016 293.756);
-    --sidebar-accent: oklch(27.9% 0.041 260.031);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.38 0.189 293.745);
-
-    /* --- Docusaurus 深色主题 --- */
-    --ifm-color-primary: #b3f2ff;
-    --ifm-color-primary-dark: #88ebff;
-    --ifm-color-primary-darker: #72e7ff;
-    --ifm-color-primary-darkest: #31dcff;
-    --ifm-color-primary-light: #def9ff;
-    --ifm-color-primary-lighter: #f4fdff;
-    --ifm-color-primary-lightest: #ffffff;
-    --ifm-background-color: hsl(222, 25%, 12%);
-
-    /* --- 深色模式 NavBar 颜色自定义 --- */
-    --ifm-navbar-background-color: #1b1b1d;
-    --ifm-navbar-text-color: #ffffff;
-    --ifm-navbar-link-color: #ffffff;
-    --ifm-navbar-link-hover-color: #b3f2ff;
-
-    /* 你原有的设置 (保留) */
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  }
-
-  html {
-    font: var(--ifm-font-size-base) / var(--ifm-line-height-base)
-      var(--ifm-font-family-base);
-  }
+  /* 你原有的设置 (保留) */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 /* GitHub */
@@ -471,51 +461,57 @@ article header h2,
 
 /* ========== 模板工具类和组件 ========== */
 
-@utility blog-tags {
-  & b {
-    @apply hidden;
-  }
+/* Blog tags utility */
+.blog-tags b {
+  display: none;
 }
 
-@layer components {
-  .background-grid {
-    @apply relative z-0 bg-slate-100;
-    @apply dark:bg-[#0c1222];
+/* Background grid component */
+.background-grid {
+  position: relative;
+  z-index: 0;
+  background-color: rgb(241 245 249);
+}
 
-    &::before {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      content: '';
-      opacity: 0.65;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240)' stroke-dasharray='5 3' transform='scale(1, -1)' %3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
-      mask-image: linear-gradient(transparent, black, transparent);
-    }
-  }
+[data-theme='dark'] .background-grid {
+  background-color: #0c1222;
+}
 
-  .background-grid--fade-in {
-    @apply bg-transparent bg-linear-to-t from-slate-100 via-slate-100;
-    @apply dark:bg-transparent dark:from-[#0c1222] dark:via-[#0c1222];
+.background-grid::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: '';
+  opacity: 0.65;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(226 232 240)' stroke-dasharray='5 3' transform='scale(1, -1)' %3E%3Cpath d='M0 .5H31.5V32'/%3E%3C/svg%3E");
+  mask-image: linear-gradient(transparent, black, transparent);
+}
 
-    &::before {
-      @apply bg-bottom-left;
+.background-grid--fade-in {
+  background: linear-gradient(to top, rgb(241 245 249), rgb(241 245 249));
+}
 
-      mask-image: linear-gradient(transparent, black, black);
-    }
-  }
+[data-theme='dark'] .background-grid--fade-in {
+  background: linear-gradient(to top, #0c1222, #0c1222);
+}
 
-  .background-grid--fade-out {
-    @apply bg-transparent bg-linear-to-b from-slate-100 via-slate-100;
-    @apply dark:bg-transparent dark:from-[#0c1222] dark:via-[#0c1222];
+.background-grid--fade-in::before {
+  background-position: bottom left;
+  mask-image: linear-gradient(transparent, black, black);
+}
 
-    &::before {
-      mask-image: linear-gradient(black, black, transparent);
-    }
-  }
+.background-grid--fade-out {
+  background: linear-gradient(to bottom, rgb(241 245 249), rgb(241 245 249));
+}
 
-  .background-image {
-    &--fade-out {
-      mask-image: linear-gradient(black, black, transparent);
-    }
-  }
+[data-theme='dark'] .background-grid--fade-out {
+  background: linear-gradient(to bottom, #0c1222, #0c1222);
+}
+
+.background-grid--fade-out::before {
+  mask-image: linear-gradient(black, black, transparent);
+}
+
+.background-image--fade-out {
+  mask-image: linear-gradient(black, black, transparent);
 }
