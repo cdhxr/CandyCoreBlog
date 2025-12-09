@@ -62,6 +62,8 @@ const config: Config = {
   ],
 
   plugins: [
+    ['./src/plugins/webpack-alias.js', {}],
+    ['./src/plugins/tailwind-config.js', {}],
     [
       '@docusaurus/plugin-content-docs',
       {
@@ -71,20 +73,20 @@ const config: Config = {
         sidebarPath: './sidebars.ts',
       },
     ],
-    function () {
-      return {
-        name: 'webpack-alias-plugin',
-        configureWebpack() {
-          return {
-            resolve: {
-              alias: {
-                '@': path.resolve(__dirname, 'src'),
-              },
-            },
-          };
-        },
-      };
-    },
+    // function () {
+    //   return {
+    //     name: 'webpack-alias-plugin',
+    //     configureWebpack() {
+    //       return {
+    //         resolve: {
+    //           alias: {
+    //             '@': path.resolve(__dirname, 'src'),
+    //           },
+    //         },
+    //       };
+    //     },
+    //   };
+    // },
   ],
 
   themeConfig: {
