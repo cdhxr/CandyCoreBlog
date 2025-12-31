@@ -201,7 +201,7 @@ React 将 UI 渲染视为随时间流动的“帧”。
 
 ## f —— 渲染模型
 
-代码层级的详细流程：[ React Rendering Summary](https://ai.feishu.cn/wiki/L6zNw43RNiJci1kTuSwcNK7Qn4g)
+代码层级的详细流程：[React Rendering Summary](https://ai.feishu.cn/wiki/L6zNw43RNiJci1kTuSwcNK7Qn4g)
 
 ### Render Phase
 

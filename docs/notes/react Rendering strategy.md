@@ -5,7 +5,7 @@ toc_max_heading_level: 4
 ---
 讲解了整个过程发生了什么的总结
 
-代码实现可以看[ Build your own fiber Tree](https://rx2wn2pd1qk.feishu.cn/wiki/VYdFwbnxdiYcJukUP5mcAAOVnsh)
+代码实现可以看[Build your own fiber Tree](https://rx2wn2pd1qk.feishu.cn/wiki/VYdFwbnxdiYcJukUP5mcAAOVnsh)
 
 ```javascript
 const MyApp = () => {
@@ -549,7 +549,7 @@ Render Phase（构建 WIP Fiber Tree + diff） →
 
 ## UI = f(state)
 
-参考[ Simplified useState](https://rx2wn2pd1qk.feishu.cn/wiki/GNm1wPysmiv6xRkKe8Wc52A1neD)
+参考[Simplified-useState](https://rx2wn2pd1qk.feishu.cn/wiki/GNm1wPysmiv6xRkKe8Wc52A1neD)
 
 设置当前work in progress fiber.
 

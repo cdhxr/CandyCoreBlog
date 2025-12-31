@@ -1,0 +1,5 @@
+# Ignore template files and other generated content
+
+docs/\_templates/**
+build/**
+node_modules/\*\*
