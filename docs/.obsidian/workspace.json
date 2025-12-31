@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blogs/健康话题的思考.md",
+                "file": "thoughts/图像批量裁剪的性能优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "健康话题的思考"
+              "title": "图像批量裁剪的性能优化"
             }
           },
           {
@@ -228,8 +228,11 @@
   },
   "active": "eec6dec82e3d978d",
   "lastOpenFiles": [
-    "blogs/失恋-花-电锯.md",
+    "thoughts/如何设计良好的react代码.md",
+    "thoughts/状态管理库与组件解耦.md",
+    "thoughts/图像批量裁剪的性能优化.md",
     "blogs/健康话题的思考.md",
+    "blogs/失恋-花-电锯.md",
     "notes/react设计策略与哲学.md",
     "notes/assets/react设计策略与哲学/file-20251217161846398.png",
     "notes/assets/react设计策略与哲学",
@@ -239,9 +242,6 @@
     "assets/chatbox阅读记录",
     "assets",
     "thoughts/js函数队列性质.md",
-    "thoughts/状态管理库与组件解耦.md",
-    "thoughts/如何设计良好的react代码.md",
-    "thoughts/图像批量裁剪的性能优化.md",
     "notes/Promise的拆解.md",
     "thoughts/assets/图像批量裁剪的性能优化/file-20251215211125329.png",
     "thoughts/assets/图像批量裁剪的性能优化/file-20251215152604562.png",

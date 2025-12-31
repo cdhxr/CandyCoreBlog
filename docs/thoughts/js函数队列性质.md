@@ -88,14 +88,14 @@ doC();
 
 ### promise——时间解耦
 
-[Promise的拆解](../notes/Promise的拆解.md)
+[Promise的拆解](/docs/Promise的拆解)
 
 ### setState —— 批处理执行
 
-[setState的机制](notes/八股/simplified-setstate.md)
+[setState的机制](/docs/八股/simplified-setstate)
 ### 批量裁剪——并发控制和限流
 
-[图像批量裁剪](thoughts/图像批量裁剪的性能优化.md)
+[图像批量裁剪](/thoughts/图像批量裁剪的性能优化)
 
 这里的实现创建一个excuting队列，去统计执行中的函数的数量，从而限制总任务数
 

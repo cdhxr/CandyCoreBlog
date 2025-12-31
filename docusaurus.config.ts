@@ -49,6 +49,7 @@ const config: Config = {
         blog: {
           path: 'docs/blogs',
           routeBasePath: 'life',
+          onUntruncatedBlogPosts: 'ignore',
         },
         theme: {
           customCss: './src/css/custom.css',
