@@ -8,7 +8,21 @@
         "type": "tabs",
         "children": [
           {
-            "id": "52c5101840315efa",
+            "id": "9d8eadf0d2305830",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "thoughts/状态管理库与组件解耦.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "状态管理库与组件解耦"
+            }
+          },
+          {
+            "id": "eec6dec82e3d978d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -22,17 +36,17 @@
             }
           },
           {
-            "id": "0cce11ba60494e48",
+            "id": "1c36bfe2868da588",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blogs/失恋-花-电锯.md",
+                "file": "thoughts/图像批量裁剪的性能优化.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "失恋-花-电锯"
+              "title": "图像批量裁剪的性能优化"
             }
           }
         ],
@@ -212,54 +226,53 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0cce11ba60494e48",
+  "active": "eec6dec82e3d978d",
   "lastOpenFiles": [
-    "blogs/assets/失恋-花-电锯/file-20251211085748156.jpg",
-    "blogs/assets/失恋-花-电锯/file-20251211085734631.jpg",
-    "blogs/assets/失恋-花-电锯/file-20251211085722041.jpg",
-    "blogs/assets/失恋-花-电锯/file-20251211085704655.jpg",
-    "blogs/assets/失恋-花-电锯/file-20251211085636069.jpg",
-    "blogs/assets/失恋-花-电锯/file-20251211085558921.jpg",
-    "blogs/assets/失恋-花-电锯",
-    "blogs/assets",
+    "blogs/失恋-花-电锯.md",
     "blogs/健康话题的思考.md",
-    "blogs/失恋-花-电锯.md",
-    "blogs/失恋-花-电锯.md",
-    "notes/八股/浏览器渲染过程.md",
-    "notes/八股/assets/浏览器渲染过程/file-20251209172227661.png",
-    "notes/八股/assets/浏览器渲染过程/file-20251209172121920.png",
-    "notes/八股/assets/浏览器渲染过程/file-20251209171950551.png",
-    "notes/八股/assets/浏览器渲染过程/file-20251209171736187.png",
-    "notes/八股/assets/浏览器渲染过程/file-20251209171647547.png",
-    "notes/八股/assets/浏览器渲染过程",
-    "notes/八股/assets",
-    "notes/八股/计算机网络（层级，协议，DNS，CDN，CORS）.md",
-    "thoughts/状态管理库与组件解耦.md",
-    "notes/八股/对象的深度遍历.md",
-    "thoughts/assets/状态管理库与组件解耦",
-    "assets/状态管理库与组件解耦",
+    "notes/react设计策略与哲学.md",
+    "notes/assets/react设计策略与哲学/file-20251217161846398.png",
+    "notes/assets/react设计策略与哲学",
+    "thoughts/chatbox阅读记录.md",
+    "thoughts/assets/chatbox阅读记录",
+    "thoughts/assets/chatbox阅读记录/file-20251217091347035.png",
+    "assets/chatbox阅读记录",
     "assets",
-    "notes/HTML渲染策略.md",
+    "thoughts/js函数队列性质.md",
+    "thoughts/状态管理库与组件解耦.md",
+    "thoughts/如何设计良好的react代码.md",
+    "thoughts/图像批量裁剪的性能优化.md",
+    "notes/Promise的拆解.md",
+    "thoughts/assets/图像批量裁剪的性能优化/file-20251215211125329.png",
+    "thoughts/assets/图像批量裁剪的性能优化/file-20251215152604562.png",
+    "thoughts/assets/图像批量裁剪的性能优化",
+    "notes/八股/simplified-setstate.md",
+    "notes/八股/assets/simplified-setstate/file-20251214231645279.png",
+    "notes/八股/assets/simplified-setstate",
+    "notes/八股/simplified.md",
     "thoughts/RSC & Nextjs.md",
+    "thoughts/assets/js函数队列性质/file-20251214231227843.png",
+    "thoughts/assets/js函数队列性质",
+    "docs/notes/八股/Promise的拆解.md",
     "notes/八股/apply，bind，new，prototype chain，object，Scope....md",
+    "docs/notes/八股",
+    "docs/notes",
+    "docs",
+    "notes/八股/对象的深度遍历.md",
+    "notes/八股/计算机网络（层级，协议，DNS，CDN，CORS）.md",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755691 1.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755691.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755689 1.png",
+    "thoughts/assets/RSC & Nextjs/file-20251208161755689.png",
+    "notes/八股/浏览器渲染过程.md",
+    "notes/HTML渲染策略.md",
     "thoughts/intro.md",
     "notes/intro.md",
     "notes/八股/发布订阅模式.md",
     "notes/八股/js GC.md",
-    "thoughts/如何设计良好的react代码.md",
-    "notes/八股",
     "notes/style system.md",
     "notes/前端工程化全史 1995-2025.md",
     "blogs/LastHoliday.md",
-    "thoughts/assets/RSC & Nextjs",
-    "thoughts/assets",
-    "notes/react设计策略与哲学.md",
-    "notes/react Rendering strategy.md",
-    "intro.md",
-    "thoughts/计算机相关/前端相关/React Client Framework.md",
-    "thoughts/计算机相关/前端相关/Style System.md",
-    "thoughts/计算机相关/前端相关/渲染策略——HTML到达浏览器的所有方法.md",
-    "_templates/docusaurus.md",
     "未命名.canvas"
   ]
 }
