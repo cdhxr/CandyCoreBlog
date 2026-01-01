@@ -95,16 +95,16 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '笔记',
+          label: 'Notes',
         },
         {
           type: 'docSidebar',
           sidebarId: 'thoughtsSidebar',
           docsPluginId: 'thoughts',
           position: 'left',
-          label: '洞察',
+          label: 'Thoughts',
         },
-        { to: '/life', label: '随想', position: 'left' },
+        { to: '/life', label: 'Blogs', position: 'left' },
         {
           href: 'https://github.com/cdhxr',
           position: 'right',
@@ -123,11 +123,11 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: '笔记',
+              label: 'Notes',
               to: '/docs/HTML渲染策略',
             },
             {
-              label: '洞察',
+              label: 'Thoughts',
               to: '/thoughts/RSC%20&%20Nextjs',
             },
           ],
